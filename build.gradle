@@ -1,19 +1,17 @@
-defaultTasks 'clean', 'build'
-
-buildscript {
-    ext {
-        kotlinVersion = '1.3.60'
-    }
-    repositories {
-        clear()
-        jcenter()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
-    }
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.3.72"
 }
 
+repositories {
+    clear()
+    jcenter()
+    mavenCentral()
+}
+
+defaultTasks 'clean', 'build'
+
 apply from: "$rootDir/dependencies.gradle"
+
 apply plugin: 'kotlin'
 
 group = "org.xpdojo.bank.tdd"
@@ -21,11 +19,6 @@ group = "org.xpdojo.bank.tdd"
 jar {
     archiveBaseName = 'tdd-bank-account'
     archiveVersion = '1.0.0'
-}
-
-repositories {
-    clear()
-    jcenter()
 }
 
 test {
@@ -37,13 +30,22 @@ ext {
     targetCompatibility = 1.8
 }
 
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
 dependencies {
     implementation libs.kotlin,
             libs.slf4j
 
-    testImplementation libs.test.junitApi,
-            libs.test.assertj
+    testImplementation libs.test.kotest,
+            libs.test.kotestAssertions,
+            libs.test.kotestProperty,
+            libs.test.mockk
 
-    testRuntimeOnly libs.test.junitEngine,
-            libs.logback
+    testRuntimeOnly libs.logback
 }

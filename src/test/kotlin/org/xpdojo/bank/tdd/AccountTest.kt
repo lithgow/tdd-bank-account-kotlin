@@ -1,8 +1,6 @@
 package org.xpdojo.bank.tdd
 
-import org.junit.jupiter.api.Disabled
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.FreeSpec
 
 /**
  * Requirements:
@@ -13,11 +11,11 @@ import org.junit.jupiter.api.Test
  *  I can print a statement of account activity (statement)
  *  I can apply Statement filters (include just deposits, withdrawal, date)
  */
-@DisplayName("With an account we can ...")
-class AccountTest {
+class AccountTest : FreeSpec({
 
-    @Disabled
-    @Test fun `deposit an amount to increase the balance`() {
-        TODO("Implement a failing test, make it pass, refactor ...")
+    "With an account we can" - {
+        "!deposit an amount to increase the balance" - {
+            TODO("Implement a failing test, make it pass, refactor ...")
+        }
     }
-}
+})
