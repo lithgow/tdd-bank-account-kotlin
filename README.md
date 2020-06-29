@@ -1,3 +1,5 @@
+![CI with Gradle](https://github.com/lithgow/tdd-bank-account-kotlin/workflows/CI%20with%20Gradle/badge.svg)
+
 # Driving out a Bank Account with TDD
 
 This session will be fun. That's the primary objective, have fun and code ... that's it! In this session we will talk for 
