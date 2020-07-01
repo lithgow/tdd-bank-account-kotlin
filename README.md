@@ -1,4 +1,4 @@
-![CI with Gradle](https://github.com/lithgow/tdd-bank-account-kotlin/workflows/CI%20with%20Gradle/badge.svg)
+![build](https://github.com/lithgow/tdd-bank-account-kotlin/workflows/build/badge.svg)
 
 # Driving out a Bank Account with TDD
 
