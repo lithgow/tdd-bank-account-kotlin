@@ -1,4 +1,4 @@
-![build](https://github.com/lithgow/tdd-bank-account-kotlin/workflows/build/badge.svg)
+[![build](../../workflows/build/badge.svg)](../../actions?query=workflow%3Abuild)
 
 # Driving out a Bank Account with TDD
 
